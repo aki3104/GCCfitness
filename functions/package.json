@@ -1,0 +1,33 @@
+{
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "nuxt build",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "nuxt start",
+    "dev": "nuxt",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "generate": "nuxt generate"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0",
+    "nuxt": "^2.0.0",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2",
+    "firebase-functions-test": "^0.1.6",
+    "@nuxt/typescript-build": "^0.6.0",
+    "@nuxtjs/vuetify": "^1.0.0"
+  },
+  "private": true
+}
