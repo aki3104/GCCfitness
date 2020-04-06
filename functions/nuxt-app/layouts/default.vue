@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app light>
     <!-- ナビゲーションバー中身 -->
     <v-navigation-drawer
       v-model="drawer"
