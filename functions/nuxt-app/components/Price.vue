@@ -1,58 +1,78 @@
 <template>
-  <v-container>
-    <v-row align="center" justify="center">
-      <h1>初めての方へ</h1>
+  <v-container pa-0>
+    <section id="stats">
+      <v-container class="text-center" pa-0>
+        <h2 class="display-2 font-weight-bold mb-3">料金</h2>
+      </v-container>
       <v-img
-      v-bind:src="require('@/static/images/beginner.jpg')"
-      height = '400px'>
+      :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
+      v-bind:src="require('@/static/images/price.jpg')"
+      >
+        <v-container fill-height pa-0>
+          <v-row class="mx-auto">
+            <v-col
+            class="white--text text-center"
+            cols="12"
+            tag="h1"
+            >
+            <span
+              class="font-weight-black"
+              :class="[$vuetify.breakpoint.smAndDown ? 'display-3' : 'display-4']"
+              >
+              3,500円/月
+            </span>
+            </v-col>
+          </v-row>
+        </v-container>
       </v-img>
-    </v-row>
+    </section>
 
-    <h1>完全予約制で仲間と一緒に運動しよう！</h1>
+    <v-row align="center" justify="center">
+    </v-row>
      <v-row align="center" justify="center">
        <!-- 完全予約制 -->
       <v-col>
         <v-card
           max-width="344"
-          min-height="450"
+          min-height="400"
           class="mx-auto"
           >
           <v-img
           height="250"
           src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
           ></v-img>
-          <v-card-title>完全予約制</v-card-title>
-          <v-card-text>完全予約制のため、</v-card-text>
+          <v-card-title>１回の飲み会より安い！</v-card-title>
+          <v-card-text>１回の飲み会を我慢して１ヶ月のプライベートジムを使ってみませんか？</v-card-text>
         </v-card>
       </v-col>
        <!-- 仲間と一緒に -->
       <v-col>
         <v-card
           max-width="344"
-          min-height="450"
+          min-height="400"
           class="mx-auto"
           >
           <v-img
           height="250"
           src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
           ></v-img>
-          <v-card-title>仲間と一緒に</v-card-title>
-          <v-card-text>一人でも利用可能ですが、基本は２人以上の利用を推奨します。ベンチプレスなどの高負荷トレーニングは慣れてないと危ないので、必ず２人以上で行ってください。今まで筋トレが続かなかった人も仲間がいれば継続してがんばれます。</v-card-text>
+          <v-card-title>通いたい放題</v-card-title>
+          <v-card-text>予約さえ取れればいくら通っても大丈夫です。</v-card-text>
         </v-card>
       </v-col>
        <!-- 無人のジム -->
       <v-col>
         <v-card
           max-width="344"
-          min-height="450"
+          min-height="400"
           class="mx-auto"
           >
           <v-img
           height="250"
           src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
           ></v-img>
-          <v-card-title>完全予約制</v-card-title>
-          <v-card-text>器具が使いないことは絶対ない！</v-card-text>
+          <v-card-title>年会費、登録費</v-card-title>
+          <v-card-text>初期費用、年会費はありません。</v-card-text>
         </v-card>
       </v-col>
     </v-row>

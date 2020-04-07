@@ -1,44 +1,25 @@
 <template>
-  <v-carousel
-  :show-arrows="false"
-  cycle
-  hide-delimiters
-  width="cover"
-  height="cover"
+  <v-container
+  pa-0
   >
-    <v-carousel-item
-      v-for="(item,i) in items"
-      :key="i"
-      :src="item.src"
-      reverse-transition="scroll-x-transition"
-      transition="scroll-x-transition"
-    >
-    </v-carousel-item>
-    <Beginners />
+    <!-- コンポーネント読み込み -->
+    <Home />
+    <About />
+    <Beginner />
     <Price />
-  </v-carousel>
+  </v-container>
 </template>
 
 <script>
   export default {
     components: {
-      Beginners: () => import('@/components/Beginners'),
+      Home: () => import('@/components/Home'),
+      About: () => import('@/components/About'),
+      Beginner: () => import('@/components/Beginner'),
       Price: () => import('@/components/Price'),
     },
-
     data () {
       return {
-        items: [
-          {
-             src: 'images/home1.jpg',
-          },
-          {
-            src: 'images/home2.jpg',
-          },
-          {
-            src: 'images/home3.jpeg',
-          },
-        ],
       }
     },
   }

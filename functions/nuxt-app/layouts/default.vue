@@ -1,5 +1,5 @@
 <template>
-  <v-app light>
+  <v-app>
     <!-- ナビゲーションバー中身 -->
     <v-navigation-drawer
       v-model="drawer"
@@ -37,7 +37,10 @@
 
 <!-- メイン -->
     <v-content>
-      <v-container>
+      <v-container
+       fluid fill-height
+       pa-0
+       >
         <nuxt />
       </v-container>
     </v-content>
@@ -67,6 +70,11 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
+          title: '予約する',
+          to: '/access'
+        },
+        {
+          icon: 'mdi-chart-bubble',
           title: 'アクセス',
           to: '/access'
         },
@@ -87,3 +95,9 @@ export default {
   }
 }
 </script>
+
+
+<style scoped>
+
+</style>
+
