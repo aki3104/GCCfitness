@@ -71,7 +71,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: '予約する',
-          to: '/access'
+          to: '/reserve'
         },
         {
           icon: 'mdi-chart-bubble',
@@ -90,7 +90,7 @@ export default {
         }
       ],
       right: true,
-      title: 'Vuetify.js'
+      title: 'GCCフィットネス'
     }
   }
 }

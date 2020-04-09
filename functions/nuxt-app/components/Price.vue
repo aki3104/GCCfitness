@@ -1,6 +1,21 @@
 <template>
   <v-container pa-0>
-    <section id="stats">
+    <v-row no-gutters>
+      <v-theme-provider dark>
+        <v-container class="text-center" pa-0>
+          <div class="py-12"></div>
+          <h2 class="display-2 font-weight-bold mb-3">料金</h2>
+          <v-responsive
+          class="mx-auto mb-8"
+          width="56"
+          >
+            <v-divider class="mb-1"></v-divider>
+            <v-divider></v-divider>
+          </v-responsive>
+        </v-container>
+      </v-theme-provider>
+    </v-row>
+    <!-- <section id="stats">
       <v-container class="text-center" pa-0>
         <h2 class="display-2 font-weight-bold mb-3">料金</h2>
       </v-container>
@@ -25,7 +40,7 @@
           </v-row>
         </v-container>
       </v-img>
-    </section>
+    </section> -->
 
     <v-row align="center" justify="center">
     </v-row>

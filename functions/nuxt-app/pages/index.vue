@@ -6,6 +6,7 @@
     <Home />
     <About />
     <Beginner />
+    <Access />
     <Price />
   </v-container>
 </template>
@@ -16,6 +17,7 @@
       Home: () => import('@/components/Home'),
       About: () => import('@/components/About'),
       Beginner: () => import('@/components/Beginner'),
+      Access: () => import('@/components/Access'),
       Price: () => import('@/components/Price'),
     },
     data () {

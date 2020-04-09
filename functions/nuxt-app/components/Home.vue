@@ -2,7 +2,8 @@
   <v-section>
     <section id="hero">
       <v-row no-gutters>
-            <v-img
+            <v-img 
+              width="100vw"
               :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
               v-bind:src="require('@/static/images/home1.jpg')"
             >
@@ -47,21 +48,7 @@
             </v-img>
       </v-row>
     </section>
-        <!-- <v-carousel
-        :show-arrows="false"
-        cycle
-        hide-delimiters
-        >
-          <v-carousel-item
-            v-for="(item,i) in items"
-            :key="i"
-            :src="item.src"
-            :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-            reverse-transition="scroll-x-transition"
-            transition="scroll-x-transition"
-          >
-          </v-carousel-item> -->
-        <!-- </v-carousel> -->
+ 
   </v-section>
 </template>
 
@@ -84,3 +71,6 @@
     },
   }
 </script>
+
+<style scoped>
+</style>>
