@@ -3,14 +3,14 @@
   pa-0
   >
     <!-- コンポーネント読み込み -->
-    <Signin />
+    <Signup />
   </v-container>
 </template>
 
 <script>
   export default {
     components: {
-      Signin: () => import('@/components/Signin'),
+      Signup: () => import('@/components/Signup'),
     },
     data () {
       return {
