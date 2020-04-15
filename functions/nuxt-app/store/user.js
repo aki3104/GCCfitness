@@ -1,27 +1,44 @@
-import axios from "axios";
+import firebase from "~/plugins/firebase.js"
 
 export default {
   namespaced: true,
 
   state: {
     users: [{}],
+    signined: false,
+    singinUser:{}
   },
 
   getters: {
     users(state) {
       return state.users;
-    }
-  },  
+    },
+    signined(state) {
+      return state.signined;
+    },
+  },
   
   mutations: {
-    users(state, payload) {
-      state.users = payload.users;
-    },
-
     // 各フォームの値をVuexストアに渡す
     update(state, { value, keyName }) {
       const user = state.users[0];
       user[keyName] = value;
+    },
+    // ログイン状態の管理
+    signinSession(state, payload){
+      if (payload) {
+        state.signined = true
+      } else {
+        state.signined = false
+      }
+    },
+
+    singinUser(state, payload){
+      if (payload) {
+        state.singinUser = payload
+      } else {
+        state.singinUser = {}
+      }
     },
 
     //stateのuserを削除
@@ -31,76 +48,80 @@ export default {
   },
 
   actions: {
-    // users#indexと紐づく
-    index(context) {
-      axios
-        .get("/api/v1/users")
-        .then(response => {
-          context.commit("users", { users: response.data });
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    },
-
-    // users#createと紐づく
-    create(context, routeTo) {
+   
+    // サインアップを行う
+    create(context) {
+      // フォーム入力値を参照
       const user = context.state.users[0];
-      //session.jsでユーザーのログイン状態の管理
-      context.commit('session/login', null, {root: true} )
-      axios
-        .post("/api/v1/users", user)
-        .then(response => {
-          context.commit("users", { users: response.data });
-          routeTo
+      // email,passwordでプロフィールを作成
+      firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+      .then(value=>{
+        // プロフィールにユーザー名を追加
+        firebase.auth().currentUser.updateProfile({
+          displayName: user.name
         })
-        .catch(error => {
-          console.error(error);
-        });
+        .then(() => {
+          this.$router.push('/signinHome')
+          context.dispatch('signinSession')
+        })
+      })
+      .catch(error => {
+        alert(error.message)
+      })
     },
+    //signinを行う
+   signin(context, user) {
+     console.log('signin')
+     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+     .then(value=> {
+       this.$router.push('/signinHome')
+      //  context.commit('singinUser', value.user)
+       context.dispatch('signinSession')
+        })
+        .catch(error =>  {
+          alert(error.message)
+        })
+      },
+
+      signinSession(context){
+        console.log('out')
+        firebase.auth().onAuthStateChanged(user => {
+          console.log('in')
+          console.log(user)
+          context.commit('signinSession', user);
+          context.commit('singinUser', user);
+        });
+      },
+  
 
     // users#updateと紐づく
-    update(context, routeTo) {
+    update(context) {
       const user = context.state.users[0];
-      axios
-        .patch(`/api/v1/users/${user.id}`, user)
-        .then(response => {
-          context.commit("users", { users: response.data });
-          routeTo
-        })
-        .catch(error => {
-          console.error(error);
-        });
+      firebase.auth().currentUser.updateProfile({
+        displayName: user.name,
+        email: user.email,
+        password: user.password
+      })
+      .then(value => {
+        console.log(value)
+        this.$router.push('/signinHome')
+        context.commit('update')
+      })
+      .catch(error => {
+        console.error(error);
+      });
     },
 
-    // sessions#createと紐づく
-    login(context, user, routeTo) {
-      //session.jsでユーザーのログイン状態の管理
-      context.commit('session/login', null, {root: true} )
-      axios
-        .post("/api/v1/login", user)
-        .then(response => {
-          context.commit("users", { users: response.data });
-          context.dispatch("task/index", null, { root: true }); 
-          routeTo
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    },
-    logout(context, user, routeTo ) {
-      context.commit('deleteUsers')
-      context.commit('session/logout', null, {root: true})
-      axios
-        .delete("/api/v1/logout", user)
-        .then(response => {
-          context.commit("users", { users: response.data });
-          routeTo
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    },
+    signout(context, payload){
+      firebase.auth().signOut()
+      .then(()=> {
+        context.dispatch('signinSession')
+        context.commit('deleteUsers')
+        this.$router.push('/')
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+    }
   },
-  
 };

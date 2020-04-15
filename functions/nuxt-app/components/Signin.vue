@@ -1,29 +1,35 @@
 <template>
   <v-container text-xs-center>
     <v-row justify="center">
-      <v-text>
-        <h1>ログインする</h1>
-      </v-text>
+      <v-col>
+        <h1>ログイン</h1>
+      </v-col>
     </v-row>
 
     <v-row justify="center">
       <v-col>
         <v-card
         max-width="344"
-        min-height="450"
+        min-height="375"
         class="mx-auto">
           <v-card-text>
             <v-form>
-               <v-text-field :value="user.email" @input="updateParams($event, 'cityNumber')" label="市町村番号5ケタ（下呂市）"></v-text-field>
-               <v-text-field :value="user.email" @input="updateParams($event, 'staffNumber')" label="職員番号"></v-text-field>
-               <v-text-field type="password" :value="user.password" @input="updateParams($event, 'password')" label="パスワード"></v-text-field>
+               <v-text-field
+               :value="user.email"
+               @input="updateParams($event, 'email')"
+               prepend-icon='fa-envelope'
+               label="メールアドレス">
+               </v-text-field>
+               <v-text-field
+               type="password"
+               :value="user.password"
+               @input="updateParams($event, 'password')"
+               prepend-icon='fa-key'
+               label="パスワード">
+               </v-text-field>
                <div class="text-center">
                  <!-- 後でusers#createに繋がるactionをuser.jsに作成 -->
-                <v-btn
-                :to="{ name: 'singin' }"
-                color="info"
-                @click="signin(users[0], $router.push({name: 'signinHome'}))"
-                >ログイン</v-btn>
+                <v-btn color="info" @click="signin(user)">ログイン</v-btn>
                </div>
             </v-form>
 
