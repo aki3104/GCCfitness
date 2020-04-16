@@ -1,5 +1,5 @@
 <template>
-  <v-container pa-0>
+  <v-container pa-0 ma-0 fluid id='access1'>
     <section id="access">
       <v-row no-gutters>
         <v-theme-provider dark>
@@ -17,39 +17,41 @@
         </v-theme-provider>
       </v-row>
 
-      <v-row align="center" justify="center">
-      <!-- 星雲会館から近い -->
-        <v-col>
-          <v-card
-          max-width="500"
-          min-height="300"
-          class="mx-auto"
-          >
-            <v-img
-            height="250"
-            src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-            ></v-img>
-            <v-card-title>星雲会館から徒歩</v-card-title>
-            <v-card-text>星雲会館から徒歩５分の高アクセス</v-card-text>
-          </v-card>
-        </v-col>
+      <v-container pa-0 mb-10>
+        <v-row align="center" justify="center">
+        <!-- 星雲会館から近い -->
+          <v-col>
+            <v-card
+            max-width="500"
+            min-height="300"
+            class="mx-auto"
+            >
+              <v-img
+              height="250"
+              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+              ></v-img>
+              <v-card-title>星雲会館から徒歩</v-card-title>
+              <v-card-text>星雲会館から徒歩５分の高アクセス</v-card-text>
+            </v-card>
+          </v-col>
 
-        <!-- 駐車場あり -->
-        <v-col>
-          <v-card
-          max-width="500"
-          min-height="300"
-          class="mx-auto"
-          >
-            <v-img
-            height="250"
-            src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-            ></v-img>
-            <v-card-title>駐車場あり</v-card-title>
-            <v-card-text>最大５台止められる駐車場完備</v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-    </section>
+          <!-- 駐車場あり -->
+          <v-col>
+            <v-card
+            max-width="500"
+            min-height="300"
+            class="mx-auto"
+            >
+              <v-img
+              height="250"
+              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+              ></v-img>
+              <v-card-title>駐車場あり</v-card-title>
+              <v-card-text>最大５台止められる駐車場完備</v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+    </v-container>
+      </section>
   </v-container>
 </template>

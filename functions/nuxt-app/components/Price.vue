@@ -1,5 +1,5 @@
 <template>
-  <v-container pa-0>
+  <v-container pa-0 ma-0 fluid id='begin1'  class="grey lighten-4">
     <v-row no-gutters>
       <v-theme-provider dark>
         <v-container class="text-center" pa-0>
@@ -15,33 +15,8 @@
         </v-container>
       </v-theme-provider>
     </v-row>
-    <!-- <section id="stats">
-      <v-container class="text-center" pa-0>
-        <h2 class="display-2 font-weight-bold mb-3">料金</h2>
-      </v-container>
-      <v-img
-      :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
-      v-bind:src="require('@/static/images/price.jpg')"
-      >
-        <v-container fill-height pa-0>
-          <v-row class="mx-auto">
-            <v-col
-            class="white--text text-center"
-            cols="12"
-            tag="h1"
-            >
-            <span
-              class="font-weight-black"
-              :class="[$vuetify.breakpoint.smAndDown ? 'display-3' : 'display-4']"
-              >
-              3,500円/月
-            </span>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-img>
-    </section> -->
 
+    <v-container class="text-center" mb-10>
     <v-row align="center" justify="center">
     </v-row>
      <v-row align="center" justify="center">
@@ -91,5 +66,6 @@
         </v-card>
       </v-col>
     </v-row>
+    </v-container>
   </v-container>
 </template>

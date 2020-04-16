@@ -1,4 +1,5 @@
 <template>
+<v-container pa-0 ma-0 id="home" fluid 
   <section id="hero">
     <v-row no-gutters>
           <v-img 
@@ -7,7 +8,7 @@
             v-bind:src="require('@/static/images/home1.jpg')"
           >
             <v-theme-provider dark>
-              <v-container fill-height pa-0>
+              <v-container fill-height fluid pa-0 id="image">
                 <v-row
                   align="center"
                   class="white--text mx-auto"
@@ -48,6 +49,7 @@
     </v-row>
  
   </section>
+  </v-container>
 </template>
 
 <script>

@@ -1,2 +1,11 @@
+<template>
+  <v-container
+    fluid fill-height
+    pa-0
+    >
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.7695178723234!2d137.21158951563257!3d35.87916468014855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6002c37e22ffb945%3A0x464dabd049991e35!2z44CSNTA5LTI1MTMg5bKQ6Zic55yM5LiL5ZGC5biC6JCp5Y6f55S65qGc5rSe77yR77yW77yR77yR4oiS77yV!5e0!3m2!1sja!2sjp!4v1586931814806!5m2!1sja!2sjp" width="800" height="600" frameborder="0" style="border:1;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-https://www.google.com/maps/place/%E3%80%92509-2513+%E5%B2%90%E9%98%9C%E7%9C%8C%E4%B8%8B%E5%91%82%E5%B8%82%E8%90%A9%E5%8E%9F%E7%94%BA%E6%A1%9C%E6%B4%9E%EF%BC%91%EF%BC%96%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%95/@35.8791647,137.2137782,17z/data=!4m2!3m1!1s0x6002c37e22ffb945:0x464dabd049991e35?hl=j
+
+  </v-container>
+</template>
+

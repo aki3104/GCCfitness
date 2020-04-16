@@ -1,11 +1,8 @@
 <template>
   <v-container text-xs-center>
     <v-row justify="center">
-      <v-col>
-        <h1>ログイン</h1>
-      </v-col>
+      <h1>ログイン</h1>
     </v-row>
-
     <v-row justify="center">
       <v-col>
         <v-card
@@ -49,7 +46,6 @@
         </v-card>
       </v-col>
     </v-row>
-
   </v-container>
 </template>
 

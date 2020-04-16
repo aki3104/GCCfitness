@@ -6,7 +6,7 @@ export default {
   state: {
     users: [{}],
     signined: false,
-    singinUser:{}
+    signinUser: {}
   },
 
   getters: {
@@ -16,6 +16,10 @@ export default {
     signined(state) {
       return state.signined;
     },
+    signinUser(state) {
+      console.log(state.signinUser)
+      return state.signinUser;
+    },
   },
   
   mutations: {
@@ -24,20 +28,21 @@ export default {
       const user = state.users[0];
       user[keyName] = value;
     },
-    // ログイン状態の管理
+    // フォーム画面の初期化処理、ログイン状態の管理,ログインユーザー情報を格納
     signinSession(state, payload){
       if (payload) {
+        console.log('session-true')
+        state.users = [{}]
         state.signined = true
+        state.signinUser = {
+          name: payload.displayName,
+          email: payload.email,
+        }
+        console.log(state.signinUser)
       } else {
+        console.log('session-false')
         state.signined = false
-      }
-    },
-
-    singinUser(state, payload){
-      if (payload) {
-        state.singinUser = payload
-      } else {
-        state.singinUser = {}
+        state.signinUser = {}
       }
     },
 
@@ -71,12 +76,11 @@ export default {
     },
     //signinを行う
    signin(context, user) {
-     console.log('signin')
+     console.log(user)
      firebase.auth().signInWithEmailAndPassword(user.email, user.password)
      .then(value=> {
        this.$router.push('/signinHome')
-      //  context.commit('singinUser', value.user)
-       context.dispatch('signinSession')
+       context.dispatch('signinSession' ,value)
         })
         .catch(error =>  {
           alert(error.message)
@@ -84,28 +88,25 @@ export default {
       },
 
       signinSession(context){
-        console.log('out')
+        //ログインユーザーを取得
         firebase.auth().onAuthStateChanged(user => {
-          console.log('in')
-          console.log(user)
           context.commit('signinSession', user);
-          context.commit('singinUser', user);
         });
       },
-  
 
     // users#updateと紐づく
-    update(context) {
+    updateFirebase(context) {
       const user = context.state.users[0];
+      console.log(user)
       firebase.auth().currentUser.updateProfile({
         displayName: user.name,
         email: user.email,
         password: user.password
       })
       .then(value => {
-        console.log(value)
+        console.log()
         this.$router.push('/signinHome')
-        context.commit('update')
+        context.commit('signinSession', user);
       })
       .catch(error => {
         console.error(error);

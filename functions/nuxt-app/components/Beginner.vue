@@ -1,9 +1,8 @@
 <template>
-  <v-container pa-0>
-    <section id="features" class="grey lighten-3">
-      <v-row no-gutters>
+  <v-container pa-0 ma-0 fluid id='begin1' class="grey lighten-3">
+      <v-row no-gutters class="text-center">
           <v-theme-provider dark>
-              <v-container class="text-center" pa-0>
+              <v-container class="text-center" pa-0 id='begin2'>
                 <div class="py-12"></div>
                 <h2 class="display-2 font-weight-bold mb-3">初めての方へ</h2>
               <v-responsive
@@ -17,6 +16,7 @@
           </v-theme-provider>
       </v-row>
 
+    <v-container class="text-center" pa-0 id='begin2' mb-10>
       <v-row align="center" justify="center">
        <!-- 完全予約制 -->
         <v-col>
@@ -64,6 +64,6 @@
           </v-card>
         </v-col>
       </v-row>
-    </section>
+    </v-container>
   </v-container>
 </template>

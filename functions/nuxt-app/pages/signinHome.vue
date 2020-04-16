@@ -1,6 +1,10 @@
 <template>
   <v-container
+  id="pagesHome"
   pa-0
+  ma-0
+  fluid
+  fill-height
   >
     <!-- コンポーネント読み込み -->
     <Home />

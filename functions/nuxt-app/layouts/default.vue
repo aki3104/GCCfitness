@@ -60,8 +60,10 @@
 <!-- メイン -->
     <v-content>
       <v-container
-       fluid fill-height
+       fluid
+       fill-height
        pa-0
+       id="default"
        >
         <nuxt />
       </v-container>
@@ -104,7 +106,7 @@ export default {
         {
           icon: 'fa-map-marked-alt',
           title: 'アクセス',
-          to: '/access'
+          to: '/map'
         },
         {
           icon: 'fa-biking',
