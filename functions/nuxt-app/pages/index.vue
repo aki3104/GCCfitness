@@ -1,5 +1,5 @@
 <template>
-  <v-container pa-0>
+  <v-container>
     <!-- コンポーネント読み込み -->
     <Signin />
   </v-container>
@@ -8,7 +8,7 @@
 <script>
   export default {
     components: {
-      Signin: () => import('@/components/Signin'),
+      Signin: () => import('@/components/Users/Signin'),
     },
     data () {
       return {

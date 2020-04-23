@@ -10,7 +10,7 @@
 <script>
   export default {
     components: {
-      Signup: () => import('@/components/Signup'),
+      Signup: () => import('@/components/Users/Signup'),
     },
     data () {
       return {

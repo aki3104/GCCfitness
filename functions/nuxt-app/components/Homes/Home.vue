@@ -1,5 +1,5 @@
 <template>
-<v-container pa-0 ma-0 id="home" fluid 
+<v-container pa-0 ma-0 id="home" fluid>
   <section id="hero">
     <v-row no-gutters>
           <v-img 

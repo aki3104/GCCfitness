@@ -14,7 +14,10 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
+    script: [
+      { src: "https://js.squareupsandbox.com/v2/paymentform"}
     ]
   },
   /*
@@ -33,6 +36,7 @@ module.exports = {
     '~/plugins/firebase',
     "~/plugins/vuex-router-sync",
     "~/plugins/fortawesome",
+    /*"~/plugins/axios",*/
   ],
   /*
   ** Nuxt.js dev-modules

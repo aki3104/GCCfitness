@@ -9,36 +9,36 @@
     <v-row justify="center">
       <v-col>
         <v-card
-        max-width="344"
-        min-height="450"
-        class="mx-auto">
+          max-width="344"
+          min-height="450"
+          class="mx-auto">
           <v-card-text>
             <v-form>
                <v-text-field
-               :value="user.name"
-               @input="updateParams($event, 'name')"
-               prepend-icon='fa-user'
-               label="氏名">
+                :value="user.name"
+                @input="updateParams($event, 'name')"
+                prepend-icon='fa-user'
+                label="氏名">
                </v-text-field>
                <v-text-field
-               :value="user.email"
-               @input="updateParams($event, 'email')"
-               prepend-icon='fa-envelope'
-               label="メールアドレス">
+                :value="user.email"
+                @input="updateParams($event, 'email')"
+                prepend-icon='fa-envelope'
+                label="メールアドレス">
                </v-text-field>
                <v-text-field
-               type="password"
-               :value="user.password"
-               @input="updateParams($event, 'password')"
-               prepend-icon='fa-key'
-               label="パスワード">
+                type="password"
+                :value="user.password"
+                @input="updateParams($event, 'password')"
+                prepend-icon='fa-key'
+                label="パスワード">
                </v-text-field>
                <v-text-field
-               type="password"
-               :value="user.password_confirmation"
-               @input="updateParams($event, 'password_confirmation')"
-               prepend-icon='fa-key'
-               label="パスワード(確認)">
+                type="password"
+                :value="user.password_confirmation"
+                @input="updateParams($event, 'password_confirmation')"
+                prepend-icon='fa-key'
+                label="パスワード(確認)">
                </v-text-field>
 
                <div class="text-center">

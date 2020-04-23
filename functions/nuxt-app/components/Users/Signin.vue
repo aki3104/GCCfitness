@@ -11,20 +11,22 @@
         class="mx-auto">
           <v-card-text>
             <v-form>
-               <v-text-field
-               :value="user.email"
-               @input="updateParams($event, 'email')"
-               prepend-icon='fa-envelope'
-               label="メールアドレス">
+              <v-text-field
+                :value="user.email"
+                @input="updateParams($event, 'email')"
+                prepend-icon='fa-envelope'
+                label="メールアドレス"
+              >
+              </v-text-field>
+              <v-text-field
+                type="password"
+                :value="user.password"
+                @input="updateParams($event, 'password')"
+                prepend-icon='fa-key'
+                label="パスワード"
+              >
                </v-text-field>
-               <v-text-field
-               type="password"
-               :value="user.password"
-               @input="updateParams($event, 'password')"
-               prepend-icon='fa-key'
-               label="パスワード">
-               </v-text-field>
-               <div class="text-center">
+               <div class="text-center mb-5">
                  <!-- 後でusers#createに繋がるactionをuser.jsに作成 -->
                 <v-btn color="info" @click="signin(user)">ログイン</v-btn>
                </div>

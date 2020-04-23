@@ -94,7 +94,7 @@ export default {
         });
       },
 
-    // users#updateと紐づく
+    // オーセンティケーションの更新
     updateFirebase(context) {
       const user = context.state.users[0];
       console.log(user)
@@ -112,7 +112,7 @@ export default {
         console.error(error);
       });
     },
-
+      // サインアウト
     signout(context, payload){
       firebase.auth().signOut()
       .then(()=> {

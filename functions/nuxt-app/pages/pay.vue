@@ -1,15 +1,16 @@
 <template>
-  <v-container pa-0>
+  <v-container
+  pa-0
+  >
     <!-- コンポーネント読み込み -->
-    <Map />
+    <Square />
   </v-container>
 </template>
 
 <script>
   export default {
     components: {
-      Map: () => import('@/components/Map'),
-
+      Square: () => import('@/components/Homes/Square'),
     },
     data () {
       return {
