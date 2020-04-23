@@ -1,6 +1,6 @@
 <template>
-  <v-container text-xs-center>
-    <v-row justify-center>
+  <v-container >
+   <v-row align="center" justify="center">
       <v-card>
         <v-card-title>
           <span class="headline">User Profile</span>

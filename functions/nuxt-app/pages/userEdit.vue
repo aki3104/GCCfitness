@@ -1,6 +1,9 @@
 <template>
-  <v-container
-  pa-0
+  <v-container 
+    class="text-center"
+    ma-0
+    pa-0
+    fluid
   >
     <!-- コンポーネント読み込み -->
     <UserEdit />
@@ -10,7 +13,7 @@
 <script>
   export default {
     components: {
-      UserEdit: () => import('@/components/UserEdit'),
+      UserEdit: () => import('@/components/Users/UserEdit'),
     },
     data () {
       return {

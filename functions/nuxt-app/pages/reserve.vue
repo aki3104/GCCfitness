@@ -11,7 +11,7 @@
 <script>
   export default {
     components: {
-      AirReserve: () => import('@/components/AirReserve'),
+      AirReserve: () => import('@/components/Homes/AirReserve'),
 
     },
     data () {

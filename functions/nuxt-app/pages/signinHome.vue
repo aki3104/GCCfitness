@@ -10,7 +10,8 @@
     <Home />
     <About />
     <Beginner />
-    <Access />
+    <Slide />
+    <!-- <Access /> -->
     <Price />
   </v-container>
 </template>
@@ -18,11 +19,12 @@
 <script>
   export default {
     components: {
-      Home: () => import('@/components/Home'),
-      About: () => import('@/components/About'),
-      Beginner: () => import('@/components/Beginner'),
-      Access: () => import('@/components/Access'),
-      Price: () => import('@/components/Price'),
+      Home: () => import('@/components/Homes/Home'),
+      About: () => import('@/components/Homes/About'),
+      Beginner: () => import('@/components/Homes/Beginner'),
+      // Access: () => import('@/components/Homes/Access'),
+      Slide: () => import('@/components/Homes/Slide'),
+      Price: () => import('@/components/Homes/PriceTime'),
     },
     data () {
       return {

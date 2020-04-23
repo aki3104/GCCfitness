@@ -12,8 +12,9 @@
             <v-divider></v-divider>
           </v-responsive>
           <v-responsive
-            class="mx-auto title font-weight-light mb-8"
+            class="mx-auto title font-weight-light mb-8 text-left"
             max-width="720"
+
           >
             このフィットネスジムは、下呂市役所職員の会員制のジムになります。なぜこのようなフィットネスジムを作ろうかと思ったかというと、ベンチプレスをしに高山まで行ってる方がいたり、筋トレ部があったりと下呂市職員は筋トレ、運動に対して意識が高いと思ったからです。
             そこで、下呂市にないベンチプレスの導入、完全予約制、にすることで気の知れた仲間と運動することで、仕事でも好循環な関係が生まれると考えたからです。

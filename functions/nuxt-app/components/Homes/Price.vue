@@ -1,7 +1,6 @@
 <template>
-  <v-container pa-0 ma-0 fluid id='begin1'  class="grey lighten-4">
+  <v-container pa-0 ma-0 fluid id='begin1' class="grey lighten-4">
     <v-row no-gutters>
-      <v-theme-provider dark>
         <v-container class="text-center" pa-0>
           <div class="py-12"></div>
           <h2 class="display-2 font-weight-bold mb-3">料金</h2>
@@ -13,7 +12,6 @@
             <v-divider></v-divider>
           </v-responsive>
         </v-container>
-      </v-theme-provider>
     </v-row>
 
     <v-container class="text-center" mb-10>
