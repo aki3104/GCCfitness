@@ -10,6 +10,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 */
+console.log('server')
 const express = require('express');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
@@ -38,7 +39,7 @@ defaultClient.basePath = 'https://connect.squareupsandbox.com';
 
 app.post('/process-payment', async (req, res) => {
   const request_params = req.body;
-
+  console.log('test4')
   // length of idempotency_key should be less than 45
   const idempotency_key = crypto.randomBytes(22).toString('hex');
 
