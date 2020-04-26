@@ -14,9 +14,8 @@
       送信
     </button>
 <script>
-kk
 
-    var foobar = foo+bar;
+
 
 export default {
   data () {

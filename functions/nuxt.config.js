@@ -36,7 +36,6 @@ module.exports = {
     '~/plugins/firebase',
     "~/plugins/vuex-router-sync",
     "~/plugins/fortawesome",
-    /*"~/plugins/axios",*/
   ],
   /*
   ** Nuxt.js dev-modules
