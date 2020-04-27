@@ -17,7 +17,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
     script: [
-      { src: "https://js.squareupsandbox.com/v2/paymentform"}
+      { src: "https://js.stripe.com/v3/" }
     ]
   },
   /*
@@ -36,6 +36,8 @@ module.exports = {
     '~/plugins/firebase',
     "~/plugins/vuex-router-sync",
     "~/plugins/fortawesome",
+    "~/plugins/plan",
+    "~/plugins/product"
   ],
   /*
   ** Nuxt.js dev-modules

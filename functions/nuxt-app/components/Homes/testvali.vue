@@ -13,10 +13,10 @@
     <button type="submit" @click="ckeckForm">
       送信
     </button>
+  </div>
+</template>
+
 <script>
-
-
-
 export default {
   data () {
     return {

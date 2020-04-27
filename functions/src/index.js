@@ -17,3 +17,4 @@ exports.nuxtServer = functions.https.onRequest(async (request, response) => {
   const result = await nuxt.renderRoute(request.originalUrl, { request })
   response.send(result.html)
 })
+
