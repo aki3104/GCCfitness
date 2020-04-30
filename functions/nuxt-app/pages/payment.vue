@@ -2,17 +2,17 @@
   <v-container text-xs-center>
     <v-row justify="center">
       <v-col class="mx-auto text-left">
-        <v-form action="/charge" method="post" id="payment-form">
-          <label for="card-element">
+        <v-form id="subscription-form">
+          <label>
             クレジット・デビットカード番号
           </label>
-          <div id="card-element">
+          <div id="card-element" class="MyCardElement">
             <!-- Stripe Element がここに入ります。 -->
           </div>
 
           <div id="card-errors" role="alert"></div>
-          <!-- Element のエラーを入れます。 -->
-          <v-btn>お支払い</v-btn>
+          <div>{{ displayError }}</div>
+          <v-btn @click="submitCard">お支払い</v-btn>
         </v-form>
       </v-col>
     </v-row>
@@ -20,64 +20,109 @@
 </template>
 
 <script>
+const stripe = Stripe('pk_test_R5RH36P554fEC9B4hCEjqXQr00zuAJWDRi');
+const elements = stripe.elements();
+const cardElement = elements.create("card");
+
 export default {
   data() {
     return {
- 
-    }
+      }
   },
 
   mounted(){
-    var stripe = Stripe('pk_test_R5RH36P554fEC9B4hCEjqXQr00zuAJWDRi'); 
-    var elements = stripe.elements();// Element作成時に options から スタイルを調整できます.
-    var style = {
+    console.log('mounted')
+    const style = {
       base: {
         // ここでStyleの調整をします。
         fontSize: '16px',
         color: "#32325d",
       }
-      };
-
-      // card Element のインスタンスを作成
-      var card = elements.create('card', {style: style});
-
-      // マウント
-      card.mount('#card-element');
+    };
+    cardElement.mount("#card-element");
   },
-  
-  method: {
+  created(){
+    console.log('created')
+  },
+  computed: {
+    displayError(event) {
+      console.log(`error ${this.event}`)
+      // if (event.error){
+        //   return event.error.message
+      // } else {
+        //   return ''
+      // }
+    },
+  },
+  methods: {
+    submitCard(event) {
+      console.log(stripe)
+      console.log(event)
+      event.preventDefault()
+      stripe.createPaymentMethod({
+        type: 'card',
+        card: cardElement,
+        billing_details: {
+          //本番はステートから持ってくる
+          email: 'jenny.rosen@example.com'
+        }
+      }).then(this.stripePaymentMethodHandler)
+    },
 
+    stripePaymentMethodHandler(result, email) {
+      if (result.error) {
+        console.log('clickerror')
+      } else {
+        console.log('clickOk')
+        console.log(result)
+        fetch('/create-customer', {
+          method: 'post',
+          headers: {'Content-Type': 'application/json'},
+          //json形式に変換
+          body: JSON.stringify({
+            email: 'jenny.resen@example.com',
+            payment_method: result.paymentMethod.id
+          }),
+        }).then(function(result){
+          console.log(result)
+          return result.json()
+        }).then(function(customer){
+          //the customer has been created
+        });
+      }
+    }
   }
 }
 
 </script>
 
 <style scoped>
-.StripeElement {
-  box-sizing: border-box;
-
+/**
+* Shows how you can use CSS to style your Element's container.
+*/
+.MyCardElement {
   height: 40px;
-
   padding: 10px 12px;
-
+  width: 100%;
+  color: #32325d;
+  background-color: white;
   border: 1px solid transparent;
   border-radius: 4px;
-  background-color: white;
 
   box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
 }
 
-.StripeElement--focus {
+.MyCardElement--focus {
   box-shadow: 0 1px 3px 0 #cfd7df;
 }
 
-.StripeElement--invalid {
+.MyCardElement--invalid {
   border-color: #fa755a;
 }
 
-.StripeElement--webkit-autofill {
+.MyCardElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
 </style>

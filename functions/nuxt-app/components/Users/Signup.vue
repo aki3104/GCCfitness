@@ -14,38 +14,39 @@
           class="mx-auto">
           <v-card-text>
             <v-form>
-               <v-text-field
+              <div>
+                <v-text-field
                 :value="user.name"
                 @input="updateParams($event, 'name')"
                 prepend-icon='fa-user'
                 label="氏名">
-               </v-text-field>
-               <v-text-field
+                </v-text-field>
+                <v-text-field
                 :value="user.email"
                 @input="updateParams($event, 'email')"
                 prepend-icon='fa-envelope'
                 label="メールアドレス">
-               </v-text-field>
-               <v-text-field
+                </v-text-field>
+                <v-text-field
                 type="password"
                 :value="user.password"
                 @input="updateParams($event, 'password')"
                 prepend-icon='fa-key'
                 label="パスワード">
-               </v-text-field>
-               <v-text-field
+                </v-text-field>
+                <v-text-field
                 type="password"
                 :value="user.password_confirmation"
                 @input="updateParams($event, 'password_confirmation')"
                 prepend-icon='fa-key'
                 label="パスワード(確認)">
-               </v-text-field>
+                </v-text-field>
 
-               <div class="text-center">
-                 <!-- 後でusers#createに繋がるactionをuser.jsに作成 -->
-                 <v-btn color="info" class="ml-2" @click="create(user)">登録</v-btn>
-                 <!-- <v-btn @click="$router.push({ name: 'TaskIndex'})">タスク一覧</v-btn> -->
-               </div>
+                <class="text-center">
+                  <!-- 後でusers#createに繋がるactionをuser.jsに作成 -->
+                  <v-btn color="info" class="ml-2" @click="create(user)">登録</v-btn>
+                  <!-- <v-btn @click="$router.push({ name: 'TaskIndex'})">タスク一覧</v-btn> -->
+                </div>
             </v-form>
               <v-card-actions>
                 <v-divider/>

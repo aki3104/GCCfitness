@@ -2,7 +2,7 @@ export const createPlan = async(amount, name, productId, accoundId) => {
   const plan = await stripe.plans.create({
     amount: amount,
     interval: "month",
-    product: productId,
+    product: producwctId,
     nickname: name,
     currency: "jpy",
   }, {

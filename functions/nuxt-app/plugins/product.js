@@ -4,7 +4,6 @@ export const createProduct = async (name, description, accountId) => {
     type: 'service',
     statement_descriptor: description
   }, {
-    stripe_account: accountId
   });
   return product;
 }

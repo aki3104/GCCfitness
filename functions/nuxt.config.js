@@ -15,6 +15,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      // { rel: 'stylesheet', href: 'StripeElements.css'}
     ],
     script: [
       { src: "https://js.stripe.com/v3/" }
@@ -91,6 +92,21 @@ module.exports = {
     */
     publicPath: '/assets/',
     extend (config, ctx) {
+    }
+  },
+  pwa: {
+    workbox: {
+  
+    },
+    meta: {
+
+    },
+    manifest: {
+      name: 'GCCfitness',
+      lang: 'fa'
+    },
+    icon: {
+      iconSrc:'./nuxt-app/static/icon.jpg'
     }
   }
 }
