@@ -18,6 +18,7 @@
 </template>
 
 <script>
+console.log('page')
   export default {
     components: {
       Home: () => import('@/components/Homes/Home'),
@@ -28,6 +29,7 @@
       Slide: () => import('@/components/Homes/Slide'),
       Price: () => import('@/components/Homes/PriceTime'),
     },
+    
     data () {
       return {
       }

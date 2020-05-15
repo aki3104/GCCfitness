@@ -22,17 +22,24 @@
     </v-list-group>
     </v-card>
   </v-row>
+  <v-row>
+    <News />
+  </v-row>
 </v-container>
 </template> 
 <script>
 import axios from 'axios'
-
+console.log('test')
 export default {
+  components: {
+    News: () => import('@/components/Homes/News'),
+  },
   head: {
     script: [
     ],
   }, 
   async asyncData () {
+    console.log('asyncData')
     const myHttpClient = axios.create({
       baseURL: process.env.microCMS_URL,
       headers: { 'X-API-kEY': process.env.microCMS_APIKEY },

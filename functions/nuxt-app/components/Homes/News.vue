@@ -33,6 +33,7 @@ export default {
     ],
   }, 
   async asyncData () {
+    console.log('asyncData')
     const myHttpClient = axios.create({
       baseURL: process.env.microCMS_URL,
       headers: { 'X-API-kEY': process.env.microCMS_APIKEY },
