@@ -17,8 +17,8 @@
     <v-container class="text-center" mb-10>
     <v-row align="center" justify="center">
     </v-row>
-     <v-row align="center" justify="center">
-       <!-- 完全予約制 -->
+      <v-row align="center" justify="center">
+        <!-- 完全予約制 -->
       <v-col>
         <v-card
           max-width="344"
@@ -33,7 +33,7 @@
           <v-card-text>１回の飲み会を我慢して１ヶ月のプライベートジムを使ってみませんか？</v-card-text>
         </v-card>
       </v-col>
-       <!-- 仲間と一緒に -->
+        <!-- 仲間と一緒に -->
       <v-col>
         <v-card
           max-width="344"
@@ -48,7 +48,7 @@
           <v-card-text>予約さえ取れればいくら通っても大丈夫です。</v-card-text>
         </v-card>
       </v-col>
-       <!-- 無人のジム -->
+        <!-- 無人のジム -->
       <v-col>
         <v-card
           max-width="344"

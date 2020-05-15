@@ -9,6 +9,7 @@
     <!-- コンポーネント読み込み -->
     <Home />
     <About />
+    <News />
     <Beginner />
     <Slide />
     <!-- <Access /> -->
@@ -21,6 +22,7 @@
     components: {
       Home: () => import('@/components/Homes/Home'),
       About: () => import('@/components/Homes/About'),
+      News: () => import('@/components/Homes/News'),
       Beginner: () => import('@/components/Homes/Beginner'),
       // Access: () => import('@/components/Homes/Access'),
       Slide: () => import('@/components/Homes/Slide'),

@@ -28,6 +28,7 @@
           v-for="(item, i) in siginItems"
           :key="i"
           :to="item.to"
+          :href="item.href"
           router
           exact
         >
@@ -81,7 +82,7 @@ export default {
         {
           icon: 'fa-calendar-alt',
           title: '予約する',
-          to: '/reserve'
+          href: "https://reserva.be/gccfit/reserve?mode=service_staff&search_evt_no=ebeJwzNrA0MAUAAwQBAg"
         },
         {
           icon: 'fa-map-marked-alt',

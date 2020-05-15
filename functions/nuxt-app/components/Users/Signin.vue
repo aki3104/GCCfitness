@@ -7,7 +7,7 @@
       <v-col>
         <v-card
         max-width="344"
-        min-height="375"
+        min-height="250"
         class="mx-auto">
           <v-card-text>
             <v-form>
@@ -25,25 +25,13 @@
                 prepend-icon='fa-key'
                 label="パスワード"
               >
-               </v-text-field>
-               <div class="text-center mb-5">
-                 <!-- 後でusers#createに繋がるactionをuser.jsに作成 -->
+                </v-text-field>
+                
+                <div class="text-center mb-5">
+                <!-- 後でusers#createに繋がるactionをuser.jsに作成 -->
                 <v-btn color="info" @click="signin(user)">ログイン</v-btn>
-               </div>
+              </div>
             </v-form>
-
-              <v-card-actions>
-                <v-divider/>
-              </v-card-actions>
-              
-              <v-card-text
-                class="text-center"
-              >
-                会員登録はお済みですか？
-              </v-card-text>
-              <v-card-actions>
-                <v-btn :to="{ name: 'signup' }" class="mx-auto px-4">新規登録する</v-btn>
-              </v-card-actions>
           </v-card-text>
         </v-card>
       </v-col>

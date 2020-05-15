@@ -1,4 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
+import env from 'dotenv'
+
+const { microCMS_APIKEY, microCMS_URL } = process.env;
 
 module.exports = {
   mode: 'spa',
@@ -54,6 +57,7 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -108,5 +112,9 @@ module.exports = {
     icon: {
       iconSrc:'./nuxt-app/static/icon.jpg'
     }
+  },
+  env: {
+    microCMS_APIKEY,
+    microCMS_URL
   }
 }

@@ -10,7 +10,7 @@
       <v-col>
         <v-card
           max-width="344"
-          min-height="450"
+          min-height="250"
           class="mx-auto">
           <v-card-text>
             <v-form>
@@ -34,13 +34,6 @@
                 prepend-icon='fa-key'
                 label="パスワード">
                 </v-text-field>
-                <v-text-field
-                type="password"
-                :value="user.password_confirmation"
-                @input="updateParams($event, 'password_confirmation')"
-                prepend-icon='fa-key'
-                label="パスワード(確認)">
-                </v-text-field>
 
                 <class="text-center">
                   <!-- 後でusers#createに繋がるactionをuser.jsに作成 -->
@@ -52,14 +45,6 @@
                 <v-divider/>
               </v-card-actions>
 
-              <v-card-text
-                class="text-center"
-              >
-                会員登録はお済みですか？
-              </v-card-text>
-              <v-card-actions>
-                <v-btn :to="{ name: 'index' }" class="mx-auto px-4">ログインする</v-btn>
-              </v-card-actions>
           </v-card-text>
         </v-card>
       </v-col>
@@ -88,6 +73,7 @@ export default {
     ]),
     //store内のステートの情報を送っている
     updateParams(event, keyName) {
+      console.log(event)
       this.update({ value: event, keyName })
     },
   }

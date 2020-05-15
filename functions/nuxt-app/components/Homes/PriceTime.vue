@@ -37,12 +37,19 @@
             {{ item.title }}
           </template>
 
-          <template #cardText>
-            {{ item.text }}
+          <template #cardText> 
+            <div class="mb-3" v-for="n in 3" :key="n">
+              {{ item.text[n-1] }}
+            </div>
+          </template>
+          <template #cardBtn>
+            <v-row align="center" justify="center">
+              <ReBtn />
+            </v-row>
           </template>
 
         </Card>
-        </v-row>
+      </v-row>
     </v-container>
     <div class="py-12"></div>
   </v-container>
@@ -53,23 +60,31 @@
     components: {
       Card: () => import('@/components/Items/TheCard'),
       Title: () => import('@/components/Items/TheTitle'),
+      ReBtn: () => import('@/components/Items/TheReBtn')
     },
     data () {
       return {
-         items: [
-           {
-             title: '利用料: 3,500／月',
-             text: '年会費、登録料などはかからず、月々使用料3,500円で使用することができます。１回飲み会を我慢する代わりに１ヶ月のジムを体験してみませんか',
-             icon: 'fa-money-bill-wave',
-           },
+        items: [
+          {
+            title: '利用料: 900／1時間',
+            text: ['年会費、登録料は無料！', 
+                    '3人で利用すれば 300円／１時間',
+                    '※代表者がお支払いください'],
+            icon: 'fa-money-bill-wave',
+            
+          },
           {
             title: '営業日：不定休',
-            text: '休日は予約カレンダー、公式ラインでお知らせします。',
+            text: ['基本は無休', 
+                  'お盆、年末年始、メンタナンスで休業します',
+                  '休日は公式Line、サイト内で連絡します'],
             icon: 'fa-calendar-alt',
           },
           {
             title: '時間: 5時〜24時',
-            text: '無人ということもあり、営業時間は長めです。自分の都合が良い時間に予約いただけたらと思います',
+            text: ['営業時間は長めです', 
+                  '予約は１時間単位で行えます',
+                  '短時間で集中トレーニングがおすすめです'],
             icon: 'fa-user-clock',
           },
         ],
@@ -80,5 +95,4 @@
 </script>
 
 <style scoped>
-
 </style>
