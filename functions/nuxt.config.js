@@ -17,7 +17,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/fitness-favi' },
       // { rel: 'stylesheet', href: 'StripeElements.css'}
     ],
     script: [
@@ -104,7 +104,7 @@ module.exports = {
 
     },
     manifest: {
-      name: 'GCCfitness',
+      name: 'GC筋トレ部',
       lang: 'fa'
     },
     icon: {

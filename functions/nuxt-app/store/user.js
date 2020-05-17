@@ -53,7 +53,6 @@ export default {
   },
 
   actions: {
-   
     // サインアップを行う
     create(context) {
       // フォーム入力値を参照
@@ -66,7 +65,7 @@ export default {
           displayName: user.name
         })
         .then(() => {
-          this.$router.push('/signinHome')
+          this.$router.push('/')
           context.dispatch('signinSession')
         })
       })
@@ -75,12 +74,12 @@ export default {
       })
     },
     //signinを行う
-   signin(context, user) {
-     console.log(user)
-     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
-     .then(value=> {
-       this.$router.push('/signinHome')
-       context.dispatch('signinSession' ,value)
+  signin(context, user) {
+    console.log(user)
+    firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+    .then(value=> {
+      this.$router.push('/')
+      context.dispatch('signinSession' ,value)
         })
         .catch(error =>  {
           alert(error.message)
@@ -105,11 +104,12 @@ export default {
       })
       .then(value => {
         console.log()
-        this.$router.push('/signinHome')
+        this.$router.push('/')
         context.commit('signinSession', user);
       })
       .catch(error => {
         console.error(error);
+        this.$router.push('/signin')
       });
     },
       // サインアウト

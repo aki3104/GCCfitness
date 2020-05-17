@@ -7,7 +7,7 @@
       flat
     >
     <div class="overline mb-2">お知らせ</div>
-    <v-list-group v-for="(news, i) in newses" :key="i">
+    <v-list-group v-for="(news, i) in propsNewses" :key="i">
       <template v-slot:activator>
         <v-list-item-subtitle> 
           {{ news.title }}
@@ -28,25 +28,7 @@
 import axios from 'axios'
 
 export default {
-  head: {
-    script: [
-    ],
-  }, 
-  async asyncData () {
-    console.log('asyncData')
-    const myHttpClient = axios.create({
-      baseURL: process.env.microCMS_URL,
-      headers: { 'X-API-kEY': process.env.microCMS_APIKEY },
-    })
-    const res = await myHttpClient.get('news')
-    return await { newses: res.data.contents }
-  },
-  methods: {
-    onScroll (e) {
-      console.log(e)
-      this.offsetTop = e.target.scrollTop
-    },
-  }
+  props:['propsNewses'],
 }
 </script>
 

@@ -23,14 +23,14 @@
                       class="font-weight-light"
                       :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
                     >
-                      WELCOME TO
+                      みんなで筋トレ！
                     </span>
                     <br>
                     <span
                       :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
                       class="font-weight-black"
                     >
-                      GCCフィットネス
+                      GC筋トレ部
                     </span>
                   </v-col>
                   <v-btn
@@ -47,7 +47,7 @@
             </v-theme-provider>
           </v-img>
     </v-row>
- 
+
   </section>
   </v-container>
 </template>
@@ -58,7 +58,7 @@
       return {
         items: [
           {
-             src: 'images/home1.jpg',
+            src: 'images/home1.jpg',
           },
           {
             src: 'images/home2.jpg',
