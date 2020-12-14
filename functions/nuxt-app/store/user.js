@@ -21,7 +21,6 @@ export default {
       return state.signinUser;
     },
   },
-  
   mutations: {
     // 各フォームの値をVuexストアに渡す
     update(state, { value, keyName }) {

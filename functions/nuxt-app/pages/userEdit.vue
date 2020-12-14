@@ -1,5 +1,5 @@
 <template>
-  <v-container 
+  <v-container
     class="text-center"
     ma-0
     pa-0

@@ -53,31 +53,25 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations, mapActions } from 'vuex'
+import { mapGetters, mapMutations, mapActions } from "vuex";
 export default {
-  name: 'Top',
+  name: "Top",
   computed: {
-    ...mapGetters ('user', [
-      'users',
-    ]),
+    ...mapGetters("user", ["users"]),
     user() {
-      return this.users[0]
-    }
+      return this.users[0];
+    },
   },
   methods: {
-    ...mapMutations('user', [
-      'update',
-    ]),
-    ...mapActions('user', [
-      'create',
-    ]),
+    ...mapMutations("user", ["update"]),
+    ...mapActions("user", ["create"]),
     //store内のステートの情報を送っている
     updateParams(event, keyName) {
-      console.log(event)
-      this.update({ value: event, keyName })
+      console.log(event);
+      this.update({ value: event, keyName });
     },
-  }
-}
+  },
+};
 </script>
 
 <style>
