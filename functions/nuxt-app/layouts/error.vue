@@ -5,7 +5,7 @@
       fluid
       fill-height
     >
-     <v-row align="center" justify="center">
+      <v-row align="center" justify="center">
       <v-col class="mx-auto" align="center" >
         <h1 v-if="error.statusCode === 404">
           {{ pageNotFound }}
@@ -14,7 +14,7 @@
           {{ otherError }}
         </h1>
         <NuxtLink to="/">
-          ログイン画面へ戻る
+          ホーム画面へ戻る
         </NuxtLink>
       </v-col>
     </v-row>

@@ -1,4 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
+import env from 'dotenv'
+
+const { microCMS_APIKEY, microCMS_URL } = process.env;
 
 module.exports = {
   mode: 'spa',
@@ -14,10 +17,11 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/fitness-favi' },
+      // { rel: 'stylesheet', href: 'StripeElements.css'}
     ],
     script: [
-      { src: "https://js.squareupsandbox.com/v2/paymentform"}
+      { src: "https://js.stripe.com/v3/" }
     ]
   },
   /*
@@ -36,7 +40,6 @@ module.exports = {
     '~/plugins/firebase',
     "~/plugins/vuex-router-sync",
     "~/plugins/fortawesome",
-    /*"~/plugins/axios",*/
   ],
   /*
   ** Nuxt.js dev-modules
@@ -52,6 +55,7 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -91,5 +95,24 @@ module.exports = {
     publicPath: '/assets/',
     extend (config, ctx) {
     }
+  },
+  pwa: {
+    workbox: {
+  
+    },
+    meta: {
+
+    },
+    manifest: {
+      name: 'GC筋トレ部',
+      lang: 'fa'
+    },
+    icon: {
+      iconSrc:'./nuxt-app/static/icon.jpg'
+    }
+  },
+  env: {
+    microCMS_APIKEY,
+    microCMS_URL
   }
 }

@@ -1,10 +1,5 @@
 <template>
-  <v-container 
-    class="text-center grey lighten-3"
-    ma-0
-    pa-0
-    fluid
-  >
+  <v-container class="text-center grey lighten-3" ma-0 pa-0 fluid>
     <v-row align="center" justify="center">
       <Title>
         <template #title>
@@ -14,17 +9,11 @@
     </v-row>
     <v-container>
       <v-row align="center" justify="center">
-        <Card
-          v-for="(item, i) in items"
-          :key="i"
-        >
+        <Card v-for="(item, i) in items" :key="i">
           <template v-slot>
             <v-theme-provider dark>
               <div class="py-10 text-center">
-                <v-avatar
-                  color="primary"
-                  size="88"
-                >
+                <v-avatar color="primary" size="88">
                   <v-icon large>
                     {{ item.icon }}
                   </v-icon>
@@ -38,47 +27,64 @@
           </template>
 
           <template #cardText>
-            {{ item.text }}
+            <div class="mb-3" v-for="n in 3" :key="n">
+              {{ item.text[n - 1] }}
+            </div>
           </template>
-
+          <template #cardBtn>
+            <v-row align="center" justify="center">
+              <ReBtn />
+            </v-row>
+          </template>
         </Card>
-        </v-row>
+      </v-row>
     </v-container>
     <div class="py-12"></div>
   </v-container>
 </template>
 
 <script>
-  export default {
-    components: {
-      Card: () => import('@/components/Items/TheCard'),
-      Title: () => import('@/components/Items/TheTitle'),
-    },
-    data () {
-      return {
-         items: [
-           {
-             title: '利用料: 3,500／月',
-             text: '年会費、登録料などはかからず、月々使用料3,500円で使用することができます。１回飲み会を我慢する代わりに１ヶ月のジムを体験してみませんか',
-             icon: 'fa-money-bill-wave',
-           },
-          {
-            title: '営業日：不定休',
-            text: '休日は予約カレンダー、公式ラインでお知らせします。',
-            icon: 'fa-calendar-alt',
-          },
-          {
-            title: '時間: 5時〜24時',
-            text: '無人ということもあり、営業時間は長めです。自分の都合が良い時間に予約いただけたらと思います',
-            icon: 'fa-user-clock',
-          },
-        ],
-        pageTitle: '営業時間と料金'
-      }
-    },
-  }
+export default {
+  components: {
+    Card: () => import("@/components/Items/TheCard"),
+    Title: () => import("@/components/Items/TheTitle"),
+    ReBtn: () => import("@/components/Items/TheReBtn"),
+  },
+  data() {
+    return {
+      items: [
+        {
+          title: "利用料: 680／1時間",
+          text: [
+            "年会費、登録料は無料！",
+            "1人　680円／１時間",
+          ],
+          icon: "fa-money-bill-wave",
+        },
+        {
+          title: "営業日：不定休",
+          text: [
+            "基本は無休",
+            "お盆、年末年始、メンタナンスで休業します",
+            "休日は公式Line、サイト内で連絡します",
+          ],
+          icon: "fa-calendar-alt",
+        },
+        {
+          title: "時間: 5時〜24時",
+          text: [
+            "営業時間は長めです",
+            "予約は１時間単位で行えます",
+            "短時間で集中トレーニングがおすすめです",
+          ],
+          icon: "fa-user-clock",
+        },
+      ],
+      pageTitle: "営業時間と料金",
+    };
+  },
+};
 </script>
 
 <style scoped>
-
 </style>

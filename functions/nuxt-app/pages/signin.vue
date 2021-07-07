@@ -1,18 +1,14 @@
 <template>
-  <v-container
-    fluid fill-height
-    pa-0>
+  <v-container>
     <!-- コンポーネント読み込み -->
-    <AirReserve />
-
+    <Signin />
   </v-container>
 </template>
 
 <script>
   export default {
     components: {
-      AirReserve: () => import('@/components/Homes/AirReserve'),
-
+      Signin: () => import('@/components/Users/Signin'),
     },
     data () {
       return {

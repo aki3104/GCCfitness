@@ -7,7 +7,7 @@
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>GCC</v-toolbar-title>
+      <v-toolbar-title>GC筋トレ部</v-toolbar-title>
 
       <v-spacer />
       <v-btn
@@ -28,6 +28,7 @@
           v-for="(item, i) in siginItems"
           :key="i"
           :to="item.to"
+          :href="item.href"
           router
           exact
         >
@@ -42,15 +43,18 @@
 
       <v-list v-else>
         <v-list-item
-          :to="beforeSignin[0].to"
+          v-for="(item, i) in beforeSignin"
+          :key="i"
+          :to="item.to"
+          :href="item.href"
           router
           exact
         >
           <v-list-item-action>
-            <v-icon small>{{ beforeSignin[0].icon }}</v-icon>
+            <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ beforeSignin[0].title }}</v-list-item-title>
+            <v-list-item-title v-text="item.title"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -71,7 +75,7 @@ export default {
         {
           icon: 'fa-home',
           title: 'HOME',
-          to: 'signinHome'
+          to: '/'
         },
         {
           icon: 'fa-user-circle',
@@ -81,7 +85,7 @@ export default {
         {
           icon: 'fa-calendar-alt',
           title: '予約する',
-          to: '/reserve'
+          href: "https://reserva.be/gccfit/reserve?mode=service_staff&search_evt_no=ebeJwzNrA0MAUAAwQBAg"
         },
         {
           icon: 'fa-map-marked-alt',
@@ -98,11 +102,16 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'ログイン',
+          to: '/signin'
+        },
+        {
+          icon: 'fa-home',
+          title: 'ホーム',
           to: '/'
-        }
+        },
         ],
       right: true,
-      title: 'GCCフィットネス'
+      title: 'GC筋トレ部'
     }
   },
   computed: {
